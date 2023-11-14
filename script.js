@@ -60,16 +60,48 @@ function updateScore(c,p){
 }
 function win(compscore,plscore){
     const winText = document.querySelector('.win-text');
+    const reset = document.querySelector('.reset-btn');
     if (compscore !== plscore){
         if (compscore >= 5 ){
             winText.textContent = `COMPUTER WINS. YOU LOST`;
             winText.style.display = 'block';
+            reset.style.display = 'block';
+            disableBtn()
+            
+
         }
         if (plscore >=5){
             winText.textContent = `YOU WIN. COMPUTER LOST`;
             winText.style.display = 'block';
+            reset.style.display = 'block';
+            disableBtn()
         }
     }
+
     
         
 }
+function reset(){
+    comps = 0;
+    players = 0;
+    updateScore(comps,players);
+    const winText = document.querySelector('.win-text');
+    winText.style.display = 'none';
+    const btn = document.querySelectorAll('.play');
+    for(let i = 0 ;i<btn.length;i++){
+        btn[i].disabled = false;
+    }
+}
+const resetBtn = document.querySelector('.reset-btn');
+resetBtn.onclick = function(){
+    reset();
+    resetBtn.style.display = 'none';
+}
+
+function disableBtn(){
+    const btn = document.querySelectorAll('.play');
+    for(let i = 0 ;i<btn.length;i++){
+        btn[i].disabled = true;
+    }
+}
+
