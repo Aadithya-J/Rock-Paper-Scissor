@@ -55,7 +55,7 @@ h1,h3{
     
 }
 
-.win-text {
+.win-text,.reset-btn {
     display: none;
     border: 2px solid white;
     padding: 8px;
@@ -80,4 +80,22 @@ h1,h3{
     align-items: center;
     justify-content: center;
     
+}
+
+.reset-btn{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: rgb(69, 53, 53);
+    color: gray;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.reset-btn:hover{
+    background-color: rgb(69, 53, 53);
+    color: white;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
 }
