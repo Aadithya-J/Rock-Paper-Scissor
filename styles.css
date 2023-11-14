@@ -119,10 +119,11 @@ h1,h3{
     
 }
 
-.choice-img {
+.player-img,.comp-img {
     height: 50px;
     border-radius: 5px;
 }
+
 
 .plchoice{
     display: flex;
