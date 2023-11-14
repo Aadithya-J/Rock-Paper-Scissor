@@ -1,8 +1,8 @@
 let comps = 0;
 let players = 0;
 function play(player){
-    
     comp = getChoice()
+    changechoice(player,comp)
     if (player == comp){
         console.log('Tie')
         comps++;
@@ -81,6 +81,28 @@ function win(compscore,plscore){
     
         
 }
+function changechoice(player,comp){
+    const compimg = document.querySelector('.comp-img');
+    const playerimg = document.querySelector('.player-img');
+    if (player == 'rock'){
+        playerimg.src = 'button/rock2.jpg';
+    }
+    else if (player == 'paper'){
+        playerimg.src = 'button/paper.jpg';
+    }
+    else {
+        playerimg.src = 'button/scissor.jpg';
+    }
+    if (comp == 'rock'){
+        compimg.src = 'button/rock2.jpg';
+    }
+    else if (comp == 'paper'){
+        compimg.src = 'button/paper.jpg';
+    }
+    else {
+        compimg.src = 'button/scissor.jpg';
+    }
+}
 function reset(){
     comps = 0;
     players = 0;
@@ -91,6 +113,10 @@ function reset(){
     for(let i = 0 ;i<btn.length;i++){
         btn[i].disabled = false;
     }
+    const compimg = document.querySelector('.comp-img');
+    const playerimg = document.querySelector('.player-img');
+    compimg.src = 'button/question.jpg';
+    playerimg.src = 'button/question.jpg';
 }
 const resetBtn = document.querySelector('.reset-btn');
 resetBtn.onclick = function(){
